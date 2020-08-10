@@ -2,11 +2,9 @@ package cz.rychter.marketstackclient;
 
 import cz.rychter.marketstackclient.services.MarketStackService;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.util.Assert;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.lang.reflect.InvocationTargetException;
@@ -27,13 +25,9 @@ public class MarketStackServiceTest {
             HashMap<String, String> params = new HashMap<>();
             params.put("symbol", "AMD");
             buildRequestParams.setAccessible(true);
-            UriComponentsBuilder builder = (UriComponentsBuilder)buildRequestParams.invoke(marketStackService, params, "http://testurl");
+            UriComponentsBuilder builder = (UriComponentsBuilder) buildRequestParams.invoke(marketStackService, params, "http://testurl");
             Assertions.assertEquals("http://testurl?access_key=5b54788ea1c4f310a76f97f906a8704d&symbol=AMD", builder.toUriString());
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
     }

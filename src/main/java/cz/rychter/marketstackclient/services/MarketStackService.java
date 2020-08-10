@@ -8,9 +8,8 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 
 @Service
@@ -25,9 +24,9 @@ public class MarketStackService {
         this.apiToken = apiToken;
     }
 
-    private HttpHeaders getJsonHeader(){
+    private HttpHeaders getJsonHeader() {
         HttpHeaders headers = new HttpHeaders();
-        headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+        headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
         return headers;
     }
 
@@ -47,13 +46,14 @@ public class MarketStackService {
         return jsonObject.getJSONArray("data").toString();
     }
 
-    public String getTickerDataEOD(HashMap<String, String> params){
+    public String getTickerDataEOD(HashMap<String, String> params) {
+        // Tohle url musi do nejake konfigurace, nejsme v CoTraRepu abychom hardkodovali :D
         String url = "http://api.marketstack.com/v1/eod";
         UriComponentsBuilder requestParams = buildRequestParams(params, url);
-        ResponseEntity<String> response =  sendRequest(url,requestParams,getJsonHeader(), String.class);
-        if(response.getStatusCode().is2xxSuccessful()){
+        ResponseEntity<String> response = sendRequest(requestParams, getJsonHeader(), String.class);
+        if (response.getStatusCode().is2xxSuccessful()) {
             return response.getBody();
-        }else{
+        } else {
             // Melo by byt error page ale zadnou zatim nenmam
             return "Error";
         }
@@ -65,7 +65,7 @@ public class MarketStackService {
         return requestParams;
     }
 
-    private<T> ResponseEntity<T> sendRequest(String url, UriComponentsBuilder requestParams, HttpHeaders headers, Class<T> type) {
+    private <T> ResponseEntity<T> sendRequest(UriComponentsBuilder requestParams, HttpHeaders headers, Class<T> type) {
         return restTemplate.exchange(requestParams.toUriString(), HttpMethod.GET, new HttpEntity<T>(headers), type);
     }
 }

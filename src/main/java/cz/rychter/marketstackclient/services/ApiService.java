@@ -17,16 +17,18 @@ public class ApiService {
         this.marketStackService = marketStackService;
     }
 
-    @RequestMapping(value = "/", produces = MediaType.TEXT_HTML_VALUE,  method = RequestMethod.GET)
+    @RequestMapping(value = "/", produces = MediaType.TEXT_HTML_VALUE, method = RequestMethod.GET)
     public String home() {
         return "<a href=\"http://localhost:8080/tickerEod?ticker=AMD\">Jeste nemam FE ale zatim zkus tohle -> http://localhost:8080/tickerEod?ticker=AMD</a>";
     }
 
-    @RequestMapping(value = "/tickerEod", produces = MediaType.APPLICATION_JSON_VALUE,  method = RequestMethod.GET)
-    public String getTickerEod(@RequestParam String ticker){
+    @RequestMapping(value = "/tickerEod", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET)
+    public String getTickerEod(@RequestParam String ticker) {
 
         // Tahle mapa by se mela plnit z FE
-        HashMap<String, String> paramMap = new HashMap();
+        HashMap<String, String> paramMap = new HashMap<>();
+
+        //Nazvy promennych api nemuzou byt HC, Enum? Konstanty?
         paramMap.put("symbols", ticker);
         return marketStackService.getTickerDataEOD(paramMap);
     }

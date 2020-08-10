@@ -1,8 +1,5 @@
 package cz.rychter.marketstackclient.dto;
 
-import com.fasterxml.jackson.annotation.JsonSetter;
-
-import java.math.BigDecimal;
 import java.util.Date;
 
 public class TickerDataItem {
