@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "apiToken",
+      "type": "java.lang.String",
+      "description": "Description for apiToken."
+  }
+] }

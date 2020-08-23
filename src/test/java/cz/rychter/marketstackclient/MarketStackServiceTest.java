@@ -32,4 +32,9 @@ public class MarketStackServiceTest {
         }
     }
 
+    @Test
+    public void getTickers() {
+       marketStackService.getTickers(new HashMap<>());
+    }
+
 }

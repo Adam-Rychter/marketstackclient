@@ -1,0 +1,170 @@
+{
+  "pagination": {
+    "limit": 10,
+    "offset": 0,
+    "count": 10,
+    "total": 132291
+  },
+  "data": [
+    {
+      "name": "Microsoft Corp",
+      "symbol": "MSFT",
+      "has_intraday": false,
+      "has_eod": true,
+      "country": null,
+      "stock_exchange": {
+        "name": "NASDAQ Stock Exchange",
+        "acronym": "NASDAQ",
+        "mic": "XNAS",
+        "country": "USA",
+        "country_code": "US",
+        "city": "New York",
+        "website": "www.nasdaq.com"
+      }
+    },
+    {
+      "name": "Apple Inc",
+      "symbol": "AAPL",
+      "has_intraday": false,
+      "has_eod": true,
+      "country": null,
+      "stock_exchange": {
+        "name": "NASDAQ Stock Exchange",
+        "acronym": "NASDAQ",
+        "mic": "XNAS",
+        "country": "USA",
+        "country_code": "US",
+        "city": "New York",
+        "website": "www.nasdaq.com"
+      }
+    },
+    {
+      "name": "Amazoncom Inc",
+      "symbol": "AMZN",
+      "has_intraday": false,
+      "has_eod": true,
+      "country": null,
+      "stock_exchange": {
+        "name": "NASDAQ Stock Exchange",
+        "acronym": "NASDAQ",
+        "mic": "XNAS",
+        "country": "USA",
+        "country_code": "US",
+        "city": "New York",
+        "website": "www.nasdaq.com"
+      }
+    },
+    {
+      "name": "Alphabet Inc Class C",
+      "symbol": "GOOG",
+      "has_intraday": false,
+      "has_eod": true,
+      "country": null,
+      "stock_exchange": {
+        "name": "NASDAQ Stock Exchange",
+        "acronym": "NASDAQ",
+        "mic": "XNAS",
+        "country": "USA",
+        "country_code": "US",
+        "city": "New York",
+        "website": "www.nasdaq.com"
+      }
+    },
+    {
+      "name": "Alphabet Inc Class A",
+      "symbol": "GOOGL",
+      "has_intraday": false,
+      "has_eod": true,
+      "country": null,
+      "stock_exchange": {
+        "name": "NASDAQ Stock Exchange",
+        "acronym": "NASDAQ",
+        "mic": "XNAS",
+        "country": "USA",
+        "country_code": "US",
+        "city": "New York",
+        "website": "www.nasdaq.com"
+      }
+    },
+    {
+      "name": "Facebook Inc",
+      "symbol": "FB",
+      "has_intraday": false,
+      "has_eod": true,
+      "country": null,
+      "stock_exchange": {
+        "name": "NASDAQ Stock Exchange",
+        "acronym": "NASDAQ",
+        "mic": "XNAS",
+        "country": "USA",
+        "country_code": "US",
+        "city": "New York",
+        "website": "www.nasdaq.com"
+      }
+    },
+    {
+      "name": "Vodafone Group Public Limited Company",
+      "symbol": "VOD",
+      "has_intraday": false,
+      "has_eod": true,
+      "country": null,
+      "stock_exchange": {
+        "name": "NASDAQ Stock Exchange",
+        "acronym": "NASDAQ",
+        "mic": "XNAS",
+        "country": "USA",
+        "country_code": "US",
+        "city": "New York",
+        "website": "www.nasdaq.com"
+      }
+    },
+    {
+      "name": "Intel Corp",
+      "symbol": "INTC",
+      "has_intraday": false,
+      "has_eod": true,
+      "country": null,
+      "stock_exchange": {
+        "name": "NASDAQ Stock Exchange",
+        "acronym": "NASDAQ",
+        "mic": "XNAS",
+        "country": "USA",
+        "country_code": "US",
+        "city": "New York",
+        "website": "www.nasdaq.com"
+      }
+    },
+    {
+      "name": "Comcast Corp",
+      "symbol": "CMCSA",
+      "has_intraday": false,
+      "has_eod": true,
+      "country": null,
+      "stock_exchange": {
+        "name": "NASDAQ Stock Exchange",
+        "acronym": "NASDAQ",
+        "mic": "XNAS",
+        "country": "USA",
+        "country_code": "US",
+        "city": "New York",
+        "website": "www.nasdaq.com"
+      }
+    },
+    {
+      "name": "PepsiCo Inc",
+      "symbol": "PEP",
+      "has_intraday": false,
+      "has_eod": true,
+      "country": null,
+      "stock_exchange": {
+        "name": "NASDAQ Stock Exchange",
+        "acronym": "NASDAQ",
+        "mic": "XNAS",
+        "country": "USA",
+        "country_code": "US",
+        "city": "New York",
+        "website": "www.nasdaq.com"
+      }
+    }
+  ]
+}

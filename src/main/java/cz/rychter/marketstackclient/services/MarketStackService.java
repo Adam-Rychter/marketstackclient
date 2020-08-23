@@ -9,6 +9,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 
@@ -46,6 +47,20 @@ public class MarketStackService {
         return jsonObject.getJSONArray("data").toString();
     }
 
+    public ArrayList<String> getTickers(HashMap<String, String> params) {
+        String url = "http://api.marketstack.com/v1/tickers";
+
+        UriComponentsBuilder requestParams = buildRequestParams(null, url);
+        ResponseEntity<String> response = sendRequest(requestParams, getJsonHeader(), String.class);
+        if (response.getStatusCode().is2xxSuccessful()) {
+            String body =  response.getBody();
+        } else {
+            // Melo by byt error page ale zadnou zatim nenmam
+            throw new RuntimeException("Bad request");
+        }
+        return new ArrayList<>();
+    }
+
     public String getTickerDataEOD(HashMap<String, String> params) {
         // Tohle url musi do nejake konfigurace, nejsme v CoTraRepu abychom hardkodovali :D
         String url = "http://api.marketstack.com/v1/eod";
@@ -61,11 +76,13 @@ public class MarketStackService {
 
     private UriComponentsBuilder buildRequestParams(HashMap<String, String> params, String url) {
         UriComponentsBuilder requestParams = UriComponentsBuilder.fromHttpUrl(url).queryParam("access_key", apiToken);
-        params.forEach(requestParams::queryParam);
+        if(params != null) {
+            params.forEach(requestParams::queryParam);
+        }
         return requestParams;
     }
 
-    private <T> ResponseEntity<T> sendRequest(UriComponentsBuilder requestParams, HttpHeaders headers, Class<T> type) {
+    private <T> ResponseEntity<T>   sendRequest(UriComponentsBuilder requestParams, HttpHeaders headers, Class<T> type) {
         return restTemplate.exchange(requestParams.toUriString(), HttpMethod.GET, new HttpEntity<T>(headers), type);
     }
 }
