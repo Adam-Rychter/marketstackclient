@@ -2,14 +2,10 @@ package cz.rychter.marketstackclient.dto;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @JsonDeserialize(builder = Pagination.PaginationBuilder.class)
-@Getter
-@Setter
+@Data
 @Builder
 @EqualsAndHashCode
 public class Pagination {
